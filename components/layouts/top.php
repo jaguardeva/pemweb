@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -7,6 +7,19 @@
 
   <!-- flowbite -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          backgroundImage: {
+            'foto-surabaya': "url('../../assets/images/sby.jpeg')",
+          }
+        }
+      }
+    }
+  </script>
 
   <title>Document</title>
 </head>
@@ -16,9 +29,3 @@
   <?php include "components/layouts/navbar.php" ?>
 
   <main>
-
-
-
-
-
-  
