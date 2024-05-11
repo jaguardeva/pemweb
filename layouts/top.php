@@ -1,3 +1,11 @@
+<?php
+
+$exceptUrl = ['login.php', 'register.php', '/forgot-password'];
+$currPage = basename($_SERVER['PHP_SELF']);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
@@ -19,9 +27,17 @@
   <!-- flowbite -->
   <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
   <title>Document</title>
 </head>
 
 <body>
-  
+
+  <?php if (!in_array($currPage, $exceptUrl)) { ?>
+    <?php include __DIR__ . '/navbar.php'; ?>
+  <?php }
+  ; ?>
+
+
+
+  <main>

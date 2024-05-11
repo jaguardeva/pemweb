@@ -3,12 +3,14 @@ require_once __DIR__ . '/vendor/autoload.php'; // Load Composer autoloader
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-require_once "database/connection.php";
+require_once __DIR__ . "/database/connection.php";
 
 ?>
 
-<?php include "components/layouts/top.php" ?>
-<?php include "components/layouts/navbar.php" ?>
+<?php require_once __DIR__ . "/layouts/top.php"; ?>
+
+
+
 
 
 <!-- Hero -->
@@ -40,4 +42,4 @@ require_once "database/connection.php";
 
 
 
-<?php include "components/layouts/bottom.php" ?>
+<?php require_once __DIR__ . "/layouts/bottom.php"; ?>

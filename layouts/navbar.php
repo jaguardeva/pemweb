@@ -1,14 +1,14 @@
 <nav class="border-gray-200 fixed top-0 left-0 w-full transition-all duration-700">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="assets/images/logo-pemkot.png" class="h-8" alt="logo-pemkot" />
+      <img src="../assets/images/logo-pemkot.png" class="h-8" alt="logo-pemkot" />
       <span class="self-center text-2xl font-bold whitespace-nowrap">SIADU<span class="text-blue-600">SBY</span></span>
     </a>
     <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
 
       <div class="space-x-2 hidden md:flex">
-        <button type="button"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 ">Masuk</button>
+        <a href="../auth/login.php"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 ">Masuk</a>
         <button type="button"
           class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Daftar</button>
       </div>
