@@ -1,5 +1,8 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php'; // Load Composer autoloader
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 require_once "database/connection.php";
 
 ?>
@@ -7,6 +10,8 @@ require_once "database/connection.php";
 <?php include "components/layouts/top.php" ?>
 
 <!-- Hero -->
+
+
 
 <section
   class="flex flex-col items-center justify-center w-full h-screen bg-gradient-to-b from-slate-300 to-indigo-200 bg-center bg-no-repeat bg-cover p-6">

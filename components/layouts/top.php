@@ -36,6 +36,7 @@
 
 <body>
 
-  <?php include "components/layouts/navbar.php" ?>
 
+
+  <?php include "navbar.php" ?>
   <main>
