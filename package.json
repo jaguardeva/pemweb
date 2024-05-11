@@ -2,6 +2,7 @@
   "name": "pemweb",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,9 +11,9 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "flowbite": "^2.3.0",
+    "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3"
-  },
-  "dependencies": {
-    "flowbite": "^2.3.0"
   }
 }
