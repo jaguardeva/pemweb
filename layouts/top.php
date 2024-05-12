@@ -46,11 +46,6 @@ $currPage = basename($_SERVER['PHP_SELF']);
     <?php include __DIR__ . '/navbar.php'; ?>
   <?php } ?>
 
-  <?php if (isset($_SESSION["login"])) { ?>
-    <?php echo $_SESSION["login"]; ?>
-    <?php include __DIR__ . '/sidebar.php' ?>
-  <?php } ?>
-
 
 
   <main>
