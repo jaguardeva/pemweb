@@ -54,7 +54,7 @@ include '../layouts/top.php';
         <input class="p-4 w-full border border-[#d4d4d4] rounded-md placeholder:text-[#d4d4d4]" type="password"
           name="confirmPassword" id="confirmPassword" placeholder="Konfirmasi Password" autofocus>
       </div>
-      <button type="submit" name="login"
+      <button type="submit" name="register"
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-4">Login</button>
       <p class="text-md font-medium">Sudah punya akun? <a href="login.php"
           class="text-blue-500 hover:text-blue-600 hover:underline">Masuk</a>

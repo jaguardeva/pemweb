@@ -1,7 +1,9 @@
 <?php
 require_once __DIR__ . "/../../database/connection.php";
 
-if (isset($_POST["login"])) {
+if (isset($_POST["register"])) {
+
+
 
   $usernameError = "";
   $passwordError = "";
@@ -13,6 +15,7 @@ if (isset($_POST["login"])) {
   $email = htmlspecialchars($_POST["email"]);
   $confirmPassword = htmlspecialchars($_POST["confirmPassword"]);
 
+  $getEmail = $db->query("SELECT email FROM users WHERE email = '$email'")->fetch_assoc();
   if (empty($username)) {
     $usernameError = "*Username wajib diisi";
   }
@@ -27,6 +30,8 @@ if (isset($_POST["login"])) {
     $emailError = "*Email wajib diisi";
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $emailError = "*Email tidak valid";
+  } else if ($getEmail) {
+    $emailError = "*Email sudah terdaftar";
   }
 
   if (empty($confirmPassword)) {

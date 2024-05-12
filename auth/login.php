@@ -18,7 +18,7 @@ include '../layouts/top.php';
     <form method="POST" class="flex flex-col gap-5">
       <div class="flex flex-col w-full gap-3">
         <?php if (isset($emailError)) { ?>
-          <p class="text-red-500 text-sm font-medium italic"><?= $emailError ?></p>
+          <p class="text-red-500 text-sm font-normal italic"><?= $emailError ?></p>
         <?php } ?>
         <label class="font-semibold sr-only" for="email">Email</label>
         <input class="p-4 w-full border border-[#d4d4d4] rounded-md placeholder:text-[#d4d4d4]" type="text" name="email"
@@ -26,7 +26,7 @@ include '../layouts/top.php';
       </div>
       <div class="flex flex-col w-full gap-3">
         <?php if (isset($passwordError)) { ?>
-          <p class="text-red-500 text-sm font-medium italic"><?= $passwordError ?></p>
+          <p class="text-red-500 text-sm font-normal italic"><?= $passwordError ?></p>
         <?php } ?>
         <label class="font-semibold sr-only" for="password">Password</label>
         <input class="p-4 w-full border border-[#d4d4d4] rounded-md placeholder:text-[#d4d4d4]" type="password"
