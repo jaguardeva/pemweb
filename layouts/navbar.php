@@ -1,4 +1,4 @@
-<nav class="border-gray-200 fixed top-0 left-0 w-full transition-all duration-700">
+<nav class="border-gray-200 fixed top-0 left-0 w-full transition-all duration-700 z-10">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="../assets/images/logo-pemkot.png" class="h-8" alt="logo-pemkot" />
@@ -8,7 +8,8 @@
 
       <div class="space-x-2 hidden md:flex">
         <a href="../auth/login.php"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 ">Masuk</a>
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 ">
+          Masuk</a>
         <a href="../auth/register.php" id="btnRegister"
           class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border-2 border-white hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Daftar</a>
       </div>
