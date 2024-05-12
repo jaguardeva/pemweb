@@ -11,10 +11,10 @@ try {
 }
 
 
-$host = "localhost";
-$user = "root";
-$password = $_ENV["DB_PASSWORD"]; // Assuming you have set this environment variable in your .env file
-$database = "db_pemweb";
+$host = $_ENV["DB_HOST"];
+$database = $_ENV["DB_DATABASE"];
+$user = $_ENV["DB_USERNAME"];
+$password = $_ENV["DB_PASSWORD"];
 
 $db = mysqli_connect($host, $user, $password, $database);
 
@@ -22,4 +22,3 @@ if (mysqli_connect_errno()) {
   echo 'Failed to connect to MySQL: ' . mysqli_connect_error();
   exit;
 }
-

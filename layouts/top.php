@@ -14,6 +14,8 @@ $currPage = basename($_SERVER['PHP_SELF']);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><?php echo $_ENV['TITLE']; ?></title>
+  <link rel="icon" type="image/png" href="<?php echo $_ENV['TITLE_ICON']; ?>">
 
   <style>
     ::-webkit-scrollbar {
@@ -37,8 +39,7 @@ $currPage = basename($_SERVER['PHP_SELF']);
 
   <?php if (!in_array($currPage, $exceptUrl)) { ?>
     <?php include __DIR__ . '/navbar.php'; ?>
-  <?php }
-  ; ?>
+  <?php }; ?>
 
 
 
