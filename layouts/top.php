@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $exceptUrl = ['login.php', 'register.php', '/forgot-password'];
 $currPage = basename($_SERVER['PHP_SELF']);
 
