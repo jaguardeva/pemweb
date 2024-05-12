@@ -3,14 +3,14 @@
 
 // $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 // $dotenv->load();
-require_once __DIR__ . "/database/connection.php";
 
+session_start();
+if (isset($_SESSION["login"])) {
+  header("Location: dashboard.php");
+}
 ?>
 
 <?php require_once __DIR__ . "/layouts/top.php"; ?>
-
-
-
 
 
 <!-- Hero -->

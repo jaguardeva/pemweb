@@ -14,25 +14,25 @@ if (isset($_POST["login"])) {
   $confirmPassword = htmlspecialchars($_POST["confirmPassword"]);
 
   if (empty($username)) {
-    $usernameError = "Username is required";
+    $usernameError = "*Username wajib diisi";
   }
 
   if (empty($password)) {
-    $passwordError = "Password is required";
+    $passwordError = "*Password wajib diisi";
   } elseif (strlen($password) < 8) {
-    $passwordError = "Password must be at least 8 characters long";
+    $passwordError = "*Password minimal 8 karakter";
   }
 
   if (empty($email)) {
-    $emailError = "Email is required";
+    $emailError = "*Email wajib diisi";
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $emailError = "Invalid email format";
+    $emailError = "*Email tidak valid";
   }
 
   if (empty($confirmPassword)) {
-    $confirmPasswordError = "Confirm password is required";
+    $confirmPasswordError = "*Confirm password wajib diisi";
   } else if ($password !== $confirmPassword) {
-    $confirmPasswordError = "Passwords do not match";
+    $confirmPasswordError = "*Passwords tidak sama";
   }
 
   if (empty($usernameError) && empty($passwordError) && empty($emailError) && empty($confirmPasswordError)) {

@@ -1,11 +1,6 @@
 <?php
-
-session_start();
-
-$exceptUrl = ['login.php', 'register.php', '/forgot-password'];
+$exceptUrl = ['login.php', 'register.php', 'dashboard.php'];
 $currPage = basename($_SERVER['PHP_SELF']);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +32,7 @@ $currPage = basename($_SERVER['PHP_SELF']);
 
   <?php if (!in_array($currPage, $exceptUrl)) { ?>
     <?php include __DIR__ . '/navbar.php'; ?>
-  <?php }
-  ; ?>
+  <?php } ?>
 
 
 
