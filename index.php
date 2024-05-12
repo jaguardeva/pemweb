@@ -1,9 +1,4 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php'; // Load Composer autoloader
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
 session_start();
 if (isset($_SESSION["login"])) {
   header("Location: dashboard.php");
