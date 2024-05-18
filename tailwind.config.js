@@ -6,7 +6,14 @@ export default {
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        heroBanner: "url('/assets/images/hero-banner.jpg')",
+      },
+    },
   },
   plugins: [require("flowbite/plugin")],
+  hooks: {
+    watch: "npx tailwindcss -i input.css -o styles.css --watch",
+  },
 };

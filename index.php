@@ -10,18 +10,14 @@ if (isset($_SESSION["login"])) {
 <main>
 
   <!-- Hero -->
-  <section
-    class="flex flex-col items-center justify-center w-full h-screen bg-gradient-to-b from-slate-300 to-indigo-200 bg-center bg-no-repeat bg-cover p-6">
+  <div class="flex flex-col items-center justify-center w-full h-screen text-white bg-cover bg-no-repeat p-6"
+    style="background-image: url('assets/images/hero-banner.jpg');">
     <div class="flex flex-col items-center gap-3 md:gap-5">
-      <img class="w-[250px]" src="assets/images/logo-pemkot.png" alt="logo-pemkot-surabaya">
-      <h1 class="text-center font-bold text-xl md:text-3xl">Selamat Datang</h1>
-      <h1 class="text-center font-bold text-4xl md:text-7xl">SISTEM INFORMASI ADUAN</h1>
-      <p class="text-center font-semibold w-full max-w-5xl text-lg">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia explicabo, sequi unde quibusdam ipsa at
-        veniam ab eius delectus, accusantium sunt alias cupiditate quod id officiis aliquam, harum impedit. Quam!
-      </p>
+      <h1 class="text-[50px] text-center leading-[50px] max-w-screen-xl uppercase font-bold">Menjawab Kebutuhan
+        Informasi
+        PUBLIK WARGA SURABAYA</h1>
     </div>
-  </section>
+  </div>
   <!-- End Hero  -->
   <!-- About Section  -->
   <section class="w-full max-w-screen h-screen">
