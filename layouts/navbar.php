@@ -1,17 +1,19 @@
-<nav class="border-gray-200 fixed top-0 left-0 w-full transition-all duration-700 z-10">
+<nav class="border-gray-200  text-white fixed top-0 left-0 w-full z-10" id="main-nav">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="../assets/images/logo-pemkot.png" class="h-8" alt="logo-pemkot" />
-      <span class="self-center text-2xl font-bold whitespace-nowrap">SIADU<span class="text-blue-600">SBY</span></span>
+      <img src="../assets/images/logo-pemkot.png" class="h-10" alt="logo-pemkot" />
+      <h1 class="nav-link font-semibold text-[20px]">Pemerintah Kota Surabaya</h1>
     </a>
     <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
 
-      <div class="space-x-2 hidden md:flex">
+      <div class="space-x-3 hidden md:flex">
         <a href="../auth/login.php"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 ">
+          class="flex items-center justify-center text-white bg-gradient-to-tr from-[#00226E] to-[#0059E8]  w-[130px] h-[50px] text-center font-semibold text-[18px] rounded  px-5 py-2.5 hover:scale-95 transition-all duration-150">
           Masuk</a>
         <a href="../auth/register.php" id="btnRegister"
-          class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border-2 border-white hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Daftar</a>
+          class="flex items-center justify-center py-2.5 px-5  w-[130px] h-[50px] text-center focus:outline-none bg-transparent rounded border-2 border-white font-semibold text-[18px] hover:scale-95 transition-all duration-150">Daftar</a>
+        <a href="../auth/register.php" id="btnRegister2"
+          class="hidden items-center justify-center bg-gradient-to-tr from-[#04975a] to-[#0fbd72] py-2.5 px-5  w-[130px] h-[50px] text-center focus:outline-none bg-transparent rounded  font-semibold text-[18px] hover:scale-95 transition-all duration-150">Daftar</a>
       </div>
       <!-- <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300"
         id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
@@ -56,24 +58,25 @@
       <ul
         class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-white md:bg-transparent">
         <li>
-          <a href="/" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
+          <a href="/"
+            class="nav-link block py-2 px-3 text-[18px] text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
             aria-current="page">Beranda</a>
         </li>
         <li>
           <a href="#"
-            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">About</a>
+            class="nav-link  block py-2 px-3 text-[18px] text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">About</a>
         </li>
         <li>
           <a href="#"
-            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Services</a>
+            class="nav-link  block py-2 px-3 text-[18px] text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Services</a>
         </li>
         <li>
           <a href="#"
-            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Pricing</a>
+            class="nav-link  block py-2 px-3 text-[18px] text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Pricing</a>
         </li>
         <li>
           <a href="#"
-            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Contact</a>
+            class="nav-link  block py-2 px-3 text-[18px] text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Contact</a>
         </li>
       </ul>
     </div>
