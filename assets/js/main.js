@@ -8,7 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
     navbar.classList.toggle("shadow-lg", window.scrollY > 0);
 
     navLink.forEach((link) => {
-      link.classList.toggle("text-black", window.scrollY > 0);
+      if (window.scrollY > 0) {
+        link.classList.remove("text-white");
+        link.classList.add("text-black");
+      } else {
+        link.classList.add("text-white");
+        link.classList.remove("text-black");
+      }
     });
 
     if (window.scrollY > 0) {
