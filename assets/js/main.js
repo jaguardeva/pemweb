@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnRegister = document.querySelector("#btnRegister");
   const btnRegister2 = document.querySelector("#btnRegister2");
   const navLink = document.querySelectorAll(".nav-link");
+  const buttonTop = document.getElementById("button-top");
   window.addEventListener("scroll", () => {
     navbar.classList.toggle("bg-white", window.scrollY > 0);
     navbar.classList.toggle("shadow-lg", window.scrollY > 0);
@@ -22,11 +23,23 @@ document.addEventListener("DOMContentLoaded", () => {
       btnRegister2.classList.add("flex");
       btnRegister.classList.remove("flex");
       btnRegister.classList.add("hidden");
+
+      buttonTop.classList.remove("-right-20");
+      buttonTop.classList.add("right-10");
     } else {
       btnRegister2.classList.add("hidden");
       btnRegister2.classList.remove("flex");
       btnRegister.classList.add("flex");
       btnRegister.classList.remove("hidden");
+      buttonTop.classList.add("-right-20");
+      buttonTop.classList.remove("right-10");
     }
+  });
+
+  buttonTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   });
 });
