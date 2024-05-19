@@ -19,23 +19,38 @@ if (isset($_SESSION["login"])) {
   </div>
   <!-- End Hero  -->
   <!-- About Section  -->
-  <section class="w-full max-w-screen h-screen">
-    <div class="w-full absolute bottom-0 left-0 -z-10">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220">
-        <path fill="#fff" fill-opacity="1" d="M0,128L80,144C160,160,320,192,480,186.7C640,181,800,139,960,122.7C1120,107,1280,117,1360,122.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
-        </path>
-      </svg>
-    </div>
-
+  <section class="w-full max-w-screen-xl mx-auto h-screen p-4">
     <div class="container mx-auto px-4">
       <!-- Your content here -->
       <div class="p-4 rounded-lg shadow-md">
-        <h1 class="text-2xl font-bold mb-4">Sistem Informasi Aduan</h1>
-        <p>Sistem Informasi Aduan adalah platform digital yang membantu masyarakat khususnya masyarakat Surabaya dalam
-          menerima, mengelola, dan menanggapi
-          aduan atau keluhan dari masyrakat terkait dengan layanan, atau proses tertentu. Dengan fitur
-          formulir aduan online, manajemen aduan, pelacakan status, sistem ini memungkinkan masyarakat
-          untuk memberikan tanggapan yang cepat, transparan, dan efisien kepada Pemerintah Kota Surabaya</p>
+        <h1 class="text-2xl font-bold mb-4">Berita Terkini</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Card 1  -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="https://via.placeholder.com/300x200" alt="News Image 1" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h2 class="text-xl font-bold mb-2">Judul Berita 1</h2>
+              <p class="text-gray-700">Ini adalah deskripsi singkat tentang berita pertama. Berita ini mencakup topik-topik terbaru dan relevan.</p>
+            </div>
+          </div>
+          <!-- card 2 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="https://via.placeholder.com/300x200" alt="News Image 1" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h2 class="text-xl font-bold mb-2">Judul Berita 1</h2>
+              <p class="text-gray-700">Ini adalah deskripsi singkat tentang berita pertama. Berita ini mencakup topik-topik terbaru dan relevan.</p>
+            </div>
+          </div>
+          <!-- card 3  -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="https://via.placeholder.com/300x200" alt="News Image 1" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h2 class="text-xl font-bold mb-2">Judul Berita 1</h2>
+              <p class="text-gray-700">Ini adalah deskripsi singkat tentang berita pertama. Berita ini mencakup topik-topik terbaru dan relevan.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
