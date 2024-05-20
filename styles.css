@@ -1128,6 +1128,10 @@ input:checked + .toggle-bg{
   inset: 0px;
 }
 
+.-right-20{
+  right: -5rem;
+}
+
 .-right-3{
   right: -0.75rem;
 }
@@ -1176,6 +1180,10 @@ input:checked + .toggle-bg{
   right: 0px;
 }
 
+.right-10{
+  right: 2.5rem;
+}
+
 .right-6{
   right: 1.5rem;
 }
@@ -1186,18 +1194,6 @@ input:checked + .toggle-bg{
 
 .top-3{
   top: 0.75rem;
-}
-
-.-right-10{
-  right: -2.5rem;
-}
-
-.-right-20{
-  right: -5rem;
-}
-
-.right-10{
-  right: 2.5rem;
 }
 
 .isolate{
@@ -2901,22 +2897,6 @@ input:checked + .toggle-bg{
   background-color: rgb(250 202 21 / var(--tw-bg-opacity));
 }
 
-.bg-gray-400\/25{
-  background-color: rgb(156 163 175 / 0.25);
-}
-
-.bg-gray-400\/50{
-  background-color: rgb(156 163 175 / 0.5);
-}
-
-.bg-white\/15{
-  background-color: rgb(255 255 255 / 0.15);
-}
-
-.bg-white\/80{
-  background-color: rgb(255 255 255 / 0.8);
-}
-
 .bg-\[url\(\'\/assets\/images\/footer-banner\.jpg\'\)\]{
   background-image: url('/assets/images/footer-banner.jpg');
 }
@@ -3278,6 +3258,11 @@ input:checked + .toggle-bg{
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-bold{
@@ -3799,16 +3784,12 @@ input:checked + .toggle-bg{
   transition-duration: 150ms;
 }
 
-.duration-75{
-  transition-duration: 75ms;
-}
-
-.duration-500{
-  transition-duration: 500ms;
-}
-
 .duration-300{
   transition-duration: 300ms;
+}
+
+.duration-75{
+  transition-duration: 75ms;
 }
 
 .ease-in{
@@ -3991,11 +3972,6 @@ body {
 .hover\:text-gray-900:hover{
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
-.hover\:text-white:hover{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover{
@@ -4200,12 +4176,21 @@ body {
     order: 2;
   }
 
+  .md\:my-0{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   .md\:me-0{
     margin-inline-end: 0px;
   }
 
   .md\:mt-0{
     margin-top: 0px;
+  }
+
+  .md\:mt-8{
+    margin-top: 2rem;
   }
 
   .md\:flex{
@@ -4242,6 +4227,10 @@ body {
 
   .md\:flex-row{
     flex-direction: row;
+  }
+
+  .md\:items-center{
+    align-items: center;
   }
 
   .md\:gap-5{
@@ -4303,6 +4292,16 @@ body {
   .md\:text-3xl{
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .md\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
   .md\:text-blue-700{
