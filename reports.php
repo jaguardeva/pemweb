@@ -38,14 +38,14 @@ include "./layouts/dashboard/top.php";
   <hr class="block my-5 md:hidden">
   <div class="grid gap-4 md:grid-cols-4 md:mt-8">
     <?php foreach ($result as $data) { ?>
-      <div class="w-full p-4 shadow rounded <?php if ($data['status'] == 1) {
-        echo "bg-green-500 text-white";
-      } else if ($data['status'] == 0) {
-        echo "bg-yellow-300";
-      } else {
-        echo "bg-red-500 text-white";
-      }
-      ?>">
+      <a href="/detail-report.php?id=<?= $data['id'] ?>" class="hover:scale-95 ease-in-out duration-150 hover:shadow-lg w-full p-4 shadow rounded <?php if ($data['status'] == 1) {
+          echo "bg-green-500 text-white";
+        } else if ($data['status'] == 0) {
+          echo "bg-yellow-300";
+        } else {
+          echo "bg-red-500 text-white";
+        }
+        ?>">
         <div>
           <div class="flex items-center justify-between">
             <h1 class="text-lg font-bold"><?= $data['title'] ?></h1>
@@ -53,7 +53,7 @@ include "./layouts/dashboard/top.php";
           </div>
           <p class="mt-3 text-sm"><?= $data['body'] ?></p>
         </div>
-      </div>
+      </a>
     <?php } ?>
   </div>
 </main>
