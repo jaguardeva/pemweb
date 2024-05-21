@@ -30,6 +30,10 @@ try {
       background-color: grey;
       cursor: pointer;
     }
+
+    #table::-webkit-scrollbar {
+      height: 1px;
+    }
   </style>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -98,7 +102,7 @@ try {
                 </li>
                 <li>
                   <span href="services/auth/logout.php" data-modal-target="popup-modal" data-modal-toggle="popup-modal"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" role="menuitem">Sign
+                    class="block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100" role="menuitem">Sign
                     out</span>
                 </li>
               </ul>

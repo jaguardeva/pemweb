@@ -35,7 +35,14 @@ include "./layouts/dashboard/top.php";
   </div>
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
     <div class="p-4 rounded shadow">
-      <h1 class="mb-4 text-lg font-semibold">Bukti Foto</h1>
+      <div class="flex items-center justify-between mb-2 md:mb-4">
+        <h1 class="text-lg font-semibold ">Bukti Foto</h1>
+        <div
+          class="flex items-center justify-center px-4 py-2 text-sm text-white capitalize bg-blue-500 rounded-full md:px-6"
+          title="Jenis Laporan">
+          <?= $data['type'] ?>
+        </div>
+      </div>
       <img src="/public/images/<?= $data["img"] ?>" alt="">
     </div>
     <div class="flex flex-col gap-4 p-4 rounded shadow">
