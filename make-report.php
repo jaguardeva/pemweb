@@ -75,12 +75,12 @@ include "./layouts/dashboard/top.php";
       </div>
       <div class="w-full space-y-3">
         <label for="title" class="font-semibold md:text-lg">Judul</label>
-        <input class="w-full px-5 py-3 border border-gray-300 rounded outline-none" value="<?= $_POST["title"] ?? "" ?>"
+        <input class="w-full p-3 border border-gray-300 rounded outline-none" value="<?= $_POST["title"] ?? "" ?>"
           type="text" id="title" name="title" placeholder="Judul laporan..." required autofocus>
       </div>
       <div class="w-full space-y-3">
         <label for="body" class="font-semibold md:text-lg">Isi Laporan</label>
-        <textarea class=" w-full p-5 rounded outline-none border border-gray-300 h-[200px]" name="body" id="body"
+        <textarea class=" w-full p-3 rounded outline-none border border-gray-300 h-[200px]" name="body" id="body"
           required><?= $_POST["body"] ?? "" ?></textarea>
       </div>
       <div class="flex flex-col gap-3">

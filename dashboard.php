@@ -6,23 +6,49 @@ if (!isset($_SESSION["login"])) {
 
 require_once __DIR__ . "/database/connection.php";
 
-$result = $db->query("SELECT COUNT(*) as total FROM report WHERE user_id = " . $_SESSION["id"]);
+$total_proses = 0;
+$total_selesai = 0;
+$total_ditolak = 0;
+$total_reports = 0;
 
-$result_proses = $db->query("SELECT COUNT(*) as total_proses FROM report WHERE user_id = " . $_SESSION["id"] . " AND status = 0");
-$result_selesai = $db->query("SELECT COUNT(*) as total_selesai FROM report WHERE user_id = " . $_SESSION["id"] . " AND status = 1");
-$result_ditolak = $db->query("SELECT COUNT(*) as total_ditolak FROM report WHERE user_id = " . $_SESSION["id"] . " AND status = 2");
 
-$row_proses = $result_proses->fetch_assoc();
-$total_proses = $row_proses['total_proses'];
+if ($_SESSION['role'] == 1) {
+  $result = $db->query("SELECT COUNT(*) as total FROM report WHERE user_id = " . $_SESSION["id"]);
 
-$row_selesai = $result_selesai->fetch_assoc();
-$total_selesai = $row_selesai['total_selesai'];
+  $result_proses = $db->query("SELECT COUNT(*) as total_proses FROM report WHERE user_id = " . $_SESSION["id"] . " AND status = 0");
+  $result_selesai = $db->query("SELECT COUNT(*) as total_selesai FROM report WHERE user_id = " . $_SESSION["id"] . " AND status = 1");
+  $result_ditolak = $db->query("SELECT COUNT(*) as total_ditolak FROM report WHERE user_id = " . $_SESSION["id"] . " AND status = 2");
 
-$row_ditolak = $result_ditolak->fetch_assoc();
-$total_ditolak = $row_ditolak['total_ditolak'];
+  $row_proses = $result_proses->fetch_assoc();
+  $total_proses = $row_proses['total_proses'];
 
-$row = $result->fetch_assoc();
-$total_reports = $row['total'];
+  $row_selesai = $result_selesai->fetch_assoc();
+  $total_selesai = $row_selesai['total_selesai'];
+
+  $row_ditolak = $result_ditolak->fetch_assoc();
+  $total_ditolak = $row_ditolak['total_ditolak'];
+
+  $row = $result->fetch_assoc();
+  $total_reports = $row['total'];
+} else if ($_SESSION['role'] == 0) {
+  $result = $db->query("SELECT COUNT(*) as total FROM report");
+
+  $result_proses = $db->query("SELECT COUNT(*) as total_proses FROM report WHERE status = 0");
+  $result_selesai = $db->query("SELECT COUNT(*) as total_selesai FROM report WHERE status = 1");
+  $result_ditolak = $db->query("SELECT COUNT(*) as total_ditolak FROM report WHERE status = 2");
+
+  $row_proses = $result_proses->fetch_assoc();
+  $total_proses = $row_proses['total_proses'];
+
+  $row_selesai = $result_selesai->fetch_assoc();
+  $total_selesai = $row_selesai['total_selesai'];
+
+  $row_ditolak = $result_ditolak->fetch_assoc();
+  $total_ditolak = $row_ditolak['total_ditolak'];
+
+  $row = $result->fetch_assoc();
+  $total_reports = $row['total'];
+}
 
 //status = 0 = proses, 1 = ditolak, 2 = selesai
 
