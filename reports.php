@@ -77,6 +77,8 @@ include "./layouts/dashboard/top.php";
       <?php } ?>
     </div>
   <?php } else { ?>
+
+    <!-- Admin Content -->
     <h1 class="my-4 text-xl font-semibold md:my-0 md:text-3xl">Semua Laporan</h1>
     <div class="relative mt-4 overflow-x-auto shadow-md sm:rounded-lg" id="table">
       <table class="w-full text-sm text-left text-gray-500 rtl:text-right ">
@@ -97,6 +99,12 @@ include "./layouts/dashboard/top.php";
             <th scope="col" class="px-6 py-3">
               Dibuat pada
             </th>
+            <th scope="col" class="px-6 py-3">
+              Status
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Action
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -104,7 +112,7 @@ include "./layouts/dashboard/top.php";
           foreach ($result as $data) {
 
             ?>
-            <tr>
+            <tr class=" even:bg-slate-100">
               <td class="w-5 px-6 py-4">
                 <?= $i++ ?>
               </td>
@@ -120,6 +128,27 @@ include "./layouts/dashboard/top.php";
               </td>
               <td class="px-6 py-4">
                 <?= $data['created_at'] ?>
+              </td>
+
+              <td class="px-6 py-4 text-xl text-center">
+                <?php if ($data['status'] == 0) {
+                  echo "<div title='Menunggu'>
+                  🕙
+                  </div>";
+                } else if ($data['status'] == 1) {
+                  echo "<div title='Diterima'>
+                  ✅
+                  </div>";
+                } else {
+                  echo "<div title='Ditolak'>
+                  ❌
+                  </div>";
+                } ?>
+              </td>
+              <td class="px-6 py-4">
+                <a href="/detail-report.php?id=<?= $data['id'] ?>" title="Lihat Laporan"
+                  class="flex items-center justify-center p-4 text-xl text-white bg-blue-500 rounded hover:bg-blue-600"><i
+                    class="fa-solid fa-eye"></i></a>
               </td>
 
             </tr>

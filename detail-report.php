@@ -6,10 +6,15 @@ if (!isset($_SESSION["login"])) {
 
 require_once __DIR__ . "/database/connection.php";
 
-$data = $db->query("SELECT * FROM report WHERE id = " . $_GET["id"] . " AND user_id = " . $_SESSION["id"])->fetch_assoc();
+$data;
+if ($_SESSION['role'] == 1) {
+  $data = $db->query("SELECT * FROM report WHERE id = " . $_GET["id"] . " AND user_id = " . $_SESSION["id"])->fetch_assoc();
 
-if ($data['user_id'] !== $_SESSION['id']) {
-  header("Location: /dashboard.php");
+  if ($data['user_id'] !== $_SESSION['id']) {
+    header("Location: /dashboard.php");
+  }
+} else {
+  $data = $db->query("SELECT * FROM report WHERE id = " . $_GET["id"])->fetch_assoc();
 }
 
 
@@ -22,16 +27,28 @@ include "./layouts/dashboard/top.php";
 <main class="p-4 my-14 sm:ml-64">
   <div class="flex items-center justify-between md:my-0 md:mb-4">
     <h1 class="my-4 text-xl font-semibold md:text-3xl ">Detail Laporan</h1>
-    <?php if (isset($data['status']) && $data['status'] == 0) { ?>
+    <?php if (isset($data['status']) && $data['status'] == 0 && $_SESSION['role'] == 1) { ?>
       <div class="flex items-center">
-        <form action="" method="POST">
-          <button type="button" data-modal-target="popup-modal<?= $_GET["id"] ?>"
-            data-modal-toggle="popup-modal<?= $_GET["id"] ?>"
-            class="flex items-center justify-center w-10 h-10 text-white bg-red-500 rounded hover:bg-red-600"><i
-              class="fa-solid fa-trash-can"></i></button>
-        </form>
+        <button type="button" data-modal-target="popup-modal<?= $_GET["id"] ?>"
+          data-modal-toggle="popup-modal<?= $_GET["id"] ?>"
+          class="flex items-center justify-center w-10 h-10 text-white bg-red-500 rounded hover:bg-red-600"><i
+            class="fa-solid fa-trash-can"></i></button>
       </div>
     <?php } ?>
+
+    <?php if ($_SESSION['role'] == 0) { ?>
+
+      <div class="flex items-center gap-2">
+        <a id="reject" href="./services/report/rejected.php?id=<?= $_GET["id"] ?>" title="Tolak laporan"
+          class="flex items-center justify-center w-10 h-10 text-white bg-red-500 rounded hover:bg-red-600"><i
+            class="fa-solid fa-xmark"></i></a>
+        <a id="accept" href="./services/report/accepted.php?id=<?= $_GET["id"] ?>" title="Terima laporan"
+          class="flex items-center justify-center w-10 h-10 text-white bg-green-500 rounded hover:bg-green-600"><i
+            class="fa-solid fa-check"></i></a>
+      </div>
+
+    <?php } ?>
+
   </div>
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
     <div class="p-4 rounded shadow">
