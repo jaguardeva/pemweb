@@ -40,8 +40,6 @@ function addReport(array $data, $db)
     return false;
   }
 
-
-
   if ($fileSize > 2000000) {
     echo ("
       <script>
