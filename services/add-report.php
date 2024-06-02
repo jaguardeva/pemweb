@@ -1,5 +1,5 @@
-<?php
 
+<?php
 
 
 function addReport(array $data, $db)
@@ -21,7 +21,7 @@ function addReport(array $data, $db)
 
     echo ("
       <script>
-        alert('Bukti pengaduan harus diisi!');
+      alert('Bukti Pengaduan harus diisi!')
       </script>"
     );
     return false;
@@ -38,7 +38,6 @@ function addReport(array $data, $db)
       </script>"
     );
     return false;
-
   }
 
 
@@ -46,7 +45,7 @@ function addReport(array $data, $db)
   if ($fileSize > 2000000) {
     echo ("
       <script>
-        alert('Ukuran foto terlalu besar!, minimal 2 MB');
+        alert('Ukuran foto terlalu besar!, maximal 2 MB');
       </script>"
     );
     return false;
@@ -56,10 +55,10 @@ function addReport(array $data, $db)
   $fileName = "IMG" . uniqid() . '.' . $extension;
 
   move_uploaded_file($tmpFileName, "public/images/" . $fileName);
-  $query = "INSERT INTO report (type, title, body, img,status, user_id) VALUES ('$type', '$name', '$body', '$fileName',$status, '$_SESSION[id]')";
-  ;
+  $query = "INSERT INTO report (type, title, body, img,status, user_id) VALUES ('$type', '$name', '$body', '$fileName',$status, '$_SESSION[id]')";;
 
 
   $result = mysqli_query($db, $query);
   return $result;
 }
+?>
