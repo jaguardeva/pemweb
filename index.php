@@ -49,8 +49,8 @@ $result = $db->query($sql)
             <?php endif; ?>
           </div>
           <!-- Add Arrows -->
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next z-0"></div>
+          <div class="swiper-button-prev z-0"></div>
         </div>
       </div>
     </div>
