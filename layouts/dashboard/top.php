@@ -64,8 +64,8 @@ try {
             </svg>
           </button>
           <a href="dashboard.php" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="../assets/images/logo-pemkot.png" class="h-8" alt="logo-pemkot" loading="lazy" />
-            <span class="self-center text-2xl font-bold whitespace-nowrap">SIADU<span
+            <img src="../assets/logo.svg" class="h-8" alt="logo-pemkot" loading="lazy" />
+            <span class="self-center text-2xl font-bold whitespace-nowrap">SAGA<span
                 class="text-blue-600">SBY</span></span>
           </a>
         </div>

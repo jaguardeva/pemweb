@@ -1,12 +1,13 @@
-<nav class="border-gray-200  text-white fixed top-0 left-0 w-full z-10" id="main-nav">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="../assets/images/logo-pemkot.png" class="h-10" alt="logo-pemkot" />
-      <h1 class="nav-link font-semibold text-[20px]">Pemerintah Kota Surabaya</h1>
-    </a>
-    <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+<nav class="fixed top-0 left-0 z-10 w-full text-white border-gray-200" id="main-nav">
+  <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
+    <div href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="../assets/logo.svg" class="h-8" alt="logo-pemkot" loading="lazy" />
+      <h1 href class="self-center text-2xl font-bold text-blue-600 whitespace-nowrap">SAGA<span
+          class="text-blue-700">SBY</span></h1>
+    </div>
+    <div class="flex items-center space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
 
-      <div class="space-x-3 hidden md:flex">
+      <div class="hidden space-x-3 md:flex">
         <a href="../auth/login.php"
           class="flex items-center justify-center text-white bg-gradient-to-tr from-[#00226E] to-[#0059E8]  w-[130px] h-[50px] text-center font-semibold text-[18px] rounded  px-5 py-2.5 hover:scale-95 transition-all duration-150">
           Masuk</a>
@@ -26,7 +27,7 @@
         id="user-dropdown">
         <div class="px-4 py-3">
           <span class="block text-sm text-gray-900">Bonnie Green</span>
-          <span class="block text-sm  text-gray-500 truncate">name@flowbite.com</span>
+          <span class="block text-sm text-gray-500 truncate">name@flowbite.com</span>
         </div>
         <ul class="py-2" aria-labelledby="user-menu-button">
           <li>
@@ -45,7 +46,7 @@
         </ul>
       </div>
       <button data-collapse-toggle="navbar-user" type="button"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
         aria-controls="navbar-user" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -54,9 +55,9 @@
         </svg>
       </button>
     </div>
-    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+    <!-- <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
       <ul
-        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-white md:bg-transparent">
+        class="flex flex-col p-4 mt-4 font-medium bg-white border border-gray-100 rounded-lg md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
         <li>
           <a href="/"
             class="nav-link block py-2 px-3 text-[18px] text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
@@ -79,6 +80,6 @@
             class="nav-link  block py-2 px-3 text-[18px] text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Contact</a>
         </li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </nav>
