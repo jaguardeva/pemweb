@@ -2,83 +2,60 @@
 session_start();
 if (!isset($_SESSION["login"])) {
     header("Location: /auth/login.php?error=Silahkan login terlebih dahulu!");
+    exit();
 }
 
-$result;
+if ($_SESSION["role"] !== '0') {
+    header("Location: /dashboard.php?error=Anda tidak memiliki akses!");
+    exit();
+}
+
 require_once __DIR__ . "/database/connection.php";
-
-if ($_SESSION['role'] == 1) {
-    $result = $db->query("SELECT * FROM report WHERE user_id = " . $_SESSION["id"] . " ORDER BY created_at DESC");
-} else {
-    $result = $db->query("SELECT report.*, users.username as username  FROM report INNER JOIN users ON report.user_id = users.id ORDER BY created_at ASC");
-}
-
-
-
-include "./layouts/dashboard/top.php";
-
 ?>
 
+
+<?php include "./layouts/dashboard/top.php"; ?>
+
 <main class="p-4 my-14 sm:ml-64">
+    <div class="flex justify-between mb-10">
+        <h1 class="text-4xl">Daftar Berita</h1>
+        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Posting Berita</button>
+    </div>
 
-    <!-- Content For Users -->
-
-
-
-
-    <!-- Admin Content -->
-
-    <?php
-
-    // Ambil data berita dari database
-    $sql = "SELECT id, title, content, image_path, created_at FROM news ORDER BY created_at DESC";
-    $result = $conn->query($sql);
-    ?>
-
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Daftar Berita</title>
-    </head>
-
-    <body>
-        <h1>Daftar Berita</h1>
-
+    <div>
         <?php
+        // Fetch news articles from the database
+        $sql = "SELECT id, title, content, image_path FROM news ORDER BY id";
+        $result = $db->query($sql);
+
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "<div>";
-                echo "<h2>" . $row["title"] . "</h2>";
+                echo '<h2 class="text-3xl">' . htmlspecialchars($row["title"]) . '</h2>';
                 if (!empty($row["image_path"])) {
-                    echo "<img src='" . $row["image_path"] . "' alt='Gambar Berita' style='width:200px;'><br>";
+                    echo "<img src='/public/images/news/" . htmlspecialchars($row["image_path"]) . "' alt='Gambar Berita' class='object-cover w-full h-60'><br>";
                 }
-                echo "<p>" . $row["content"] . "</p>";
-                echo "<small>Diposting pada: " . $row["created_at"] . "</small>";
+                echo "<p>" . nl2br(htmlspecialchars($row["content"])) . "</p>";
+
+                // Admin management options
+                if ($_SESSION["role"] === '0') {
+                    echo '<a href="edit_news.php?id=' . $row["id"] . '">Edit</a> | ';
+                    echo '<a href="/services/delete-news.php?id=' . $row["id"] . '" onclick="return confirm(\"Are you sure?\");">Delete</a>';
+                }
+
                 echo "</div><hr>";
             }
         } else {
             echo "Tidak ada berita.";
         }
 
-        $conn->close();
+        $db->close();
         ?>
-    </body>
-
-    </html>
-
-
-
-
-
-
-
-
-
-
+    </div>
 
 </main>
 
-<?php include "./layouts/dashboard/bottom.php" ?>
+<?php include "./layouts/dashboard/bottom.php"; ?>
+
+
+</html>
