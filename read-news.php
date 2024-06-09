@@ -41,7 +41,7 @@ $db->close();
         <div class="text-gray-700 leading-relaxed">
             <p><?= nl2br(htmlspecialchars($row['content'] ?? 'Tidak ada konten')) ?></p>
         </div>
-        <a href="/" class="text-blue-700 hover:underline mt-8 inline-block">Kembali ke Beranda</a>
+        <a href="/" class="text-blue-700 hover:underline mt-8 inline-block"> <- Kembali ke Beranda</a>
     </div>
 </body>
 
