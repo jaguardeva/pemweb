@@ -22,40 +22,44 @@ require_once __DIR__ . "/database/connection.php";
         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"><a href="/make-news.php">Tambah Berita</a></button>
     </div>
 
-    <div>
-        <?php
-        // Fetch news articles from the database
-        $sql = "SELECT id, title, content, image_path FROM news ORDER BY id";
-        $result = $db->query($sql);
+    <div class="overflow-x-auto">
+        <table class="table-auto w-full border-collapse">
+            <thead>
+                <tr>
+                    <th class="border px-4 py-2">Judul Berita</th>
+                    <th class="border px-4 py-2">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Fetch news articles from the database
+                $sql = "SELECT id, title, content, image_path FROM news ORDER BY id";
+                $result = $db->query($sql);
 
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<div>";
-                echo '<h2 class="text-3xl">' . htmlspecialchars($row["title"]) . '</h2>';
-                if (!empty($row["image_path"])) {
-                    echo "<img src='/public/images/news/" . htmlspecialchars($row["image_path"]) . "' alt='Gambar Berita' class='object-cover w-full h-60'><br>";
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<tr>';
+                        echo '<td class="border px-4 py-2">' . htmlspecialchars($row["title"]) . '</td>';
+                        echo '<td class="border px-4 py-2"><a href="/read-news.php?id=' . $row["id"] . '" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mr-2">Lihat</a>';
+
+                        // Admin management options
+                        if ($_SESSION["role"] === '0') {
+                            echo '<a href="/services/delete-news.php?id=' . $row["id"] . '" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded" onclick="return confirm(\'Are you sure?\');">Hapus</a>';
+                        }
+
+                        echo '</td>';
+                        echo '</tr>';
+                    }
+                } else {
+                    echo '<tr><td class="border px-4 py-2" colspan="2">Tidak ada berita.</td></tr>';
                 }
-                echo "<p>" . nl2br(htmlspecialchars($row["content"])) . "</p>";
 
-                // Admin management options
-                if ($_SESSION["role"] === '0') {
-                    echo '<a href="edit_news.php?id=' . $row["id"] . '">Edit</a> | ';
-                    echo '<a href="/services/delete-news.php?id=' . $row["id"] . '" onclick="return confirm(\"Are you sure?\");">Delete</a>';
-                }
-
-                echo "</div><hr>";
-            }
-        } else {
-            echo "Tidak ada berita.";
-        }
-
-        $db->close();
-        ?>
+                $db->close();
+                ?>
+            </tbody>
+        </table>
     </div>
 
 </main>
 
 <?php include "./layouts/dashboard/bottom.php"; ?>
-
-
-</html>
