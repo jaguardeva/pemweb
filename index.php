@@ -26,42 +26,44 @@ $result = $db->query($sql);
   <!-- End Hero  -->
   <!-- About Section  -->
   <section class="w-full bg-gray-100">
+    <!-- Card Berita -->
+    <script src="https://swiperjs.com/swiper-api"></script>
     <div class="container w-full mx-auto max-w-7xl">
-      <!-- Card Berita -->
-      <div class="p-4 md:px-8 md:py-9 rounded-lg shadow-md relative bg-white -top-32 x-[999]">
+      <div class="p-4 md:px-8 md:py-9 rounded-lg relative ">
         <h1 class="mb-6 text-2xl font-bold">Berita Terkini</h1>
-        <div class="carousel relative overflow-hidden">
-          <div class="carousel-inner flex transition-transform duration-500 ease-in-out">
+
+        <div class="swiper-container h-full w-full ">
+          <div class=" swiper-wrapper h-full">
             <?php if ($result->num_rows > 0) : ?>
               <?php while ($row = $result->fetch_assoc()) : ?>
-
-                <div class="carousel-item flex gap-5 w-full min-w-full">
-                  <div class="overflow-hidden rounded-lg shadow-lg bg-slate-100 h-full">
-                    <img src="/public/images/news/<?= htmlspecialchars($row['image_path']) ?>" alt="News Image" class="object-cover w-full h-60">
-                    <div class="p-4">
+                <div class="swiper-slide h-screen">
+                  <div class="card shadow-md hover:shadow-lg h-full flex flex-col">
+                    <img src="/public/images/news/<?= htmlspecialchars($row['image_path']) ?>" alt="News Image" class="w-full h-full object-cover rounded-t-lg">
+                    <div class="card-content bg-white bg-opacity-30 backdrop-blur-md rounded-b-lg flex-grow p-4">
                       <h2 class="mb-2 text-xl font-bold"><?= htmlspecialchars($row['title']) ?></h2>
                       <p class="text-gray-700"><?= substr(htmlspecialchars($row['content']), 0, 50) . (strlen($row['content']) > 50 ? '...' : '') ?></p>
-                      <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                      <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 mt-auto">
                         <a href="/read-news.php?id=<?= htmlspecialchars($row['id'] ?? '') ?>">Selengkapnya</a>
                       </button>
                     </div>
                   </div>
-                </div>
 
+                </div>
               <?php endwhile; ?>
             <?php else : ?>
               <p class="text-center">Tidak ada berita terkini.</p>
             <?php endif; ?>
           </div>
-          <div class="mx-auto ">
-            <button class="">Previous</button>
-            <button class="">Next</button>
-          </div>
 
+          <div class="swiper-pagination"></div>
+          <div class="swiper-navigation">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
         </div>
       </div>
-
     </div>
+    <!-- End Berita -->
 
 
     <div class="container mx-auto space-y-4 max-w-7xl pb-14">
@@ -160,6 +162,28 @@ $result = $db->query($sql);
     <i class="text-3xl fa-solid fa-chevron-up"></i>
   </div>
 
+
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      // Jumlah berita per slide
+      spaceBetween: 30, // Jarak antar slide
+      loop: 'true',
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: 'true'
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
 
   <!-- End About  -->
 </main>
