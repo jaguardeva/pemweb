@@ -42,15 +42,10 @@
 
 ##  Overview
 
-HTTP error 401 for prompt `overview`
+Sorry no overview for now 🙏😭
 
 ---
 
-##  Features
-
-HTTP error 401 for prompt `features`
-
----
 
 ##  Repository Structure
 
