@@ -5,7 +5,7 @@
     <h1 align="center">FINAL PROJECT PEMWEB</h1>
 </p>
 <p align="center">
-    <em>HTTP error 401 for prompt `slogan`</em>
+    <em>PHP tanpa laravel `emg boleh?`</em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/jaguardeva/pemweb?style=flat&color=0080ff" alt="license">
