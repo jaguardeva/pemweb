@@ -2,7 +2,7 @@
   <img src="https://cdn-icons-png.flaticon.com/512/6295/6295417.png" width="100" />
 </p>
 <p align="center">
-    <h1 align="center">PEMWEB</h1>
+    <h1 align="center">FINAL PROJECT PEMWEB</h1>
 </p>
 <p align="center">
     <em>HTTP error 401 for prompt `slogan`</em>
